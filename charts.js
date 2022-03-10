@@ -77,17 +77,18 @@ function buildCharts(sample) {
     //  so the otu_ids with the most bacteria are last. 
     
     //d3.json("samples.json").then(function(data){
-    otu_ids_sorted = data.samples.map(persons => persons.otu_ids).sort((a,b) => b.length - a.length);
-    console.log(otu_ids_sorted);
+    //otu_ids_sorted = data.samples.map(persons => persons.otu_ids).sort((a,b) => b.length - a.length);
+   // console.log(otu_ids_sorted);
 //});
 
-    var yticks = otu_ids_sorted.slice(0,10).reverse();
+    var yticks = otu_ids.slice(0,10).map(otuID => "OTU ${otuID}").reverse();
+
 
 
     // 8. Create the trace for the bar chart. 
     var trace = {
       x: otu_labels,
-      y: yticks_rev,
+      y: yticks,
       type: "bar",
       orientation: "h"
     };
