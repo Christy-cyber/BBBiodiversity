@@ -81,19 +81,21 @@ function buildCharts(sample) {
    // console.log(otu_ids_sorted);
 //});
 
-    var yticks = otu_ids.slice(0,10).map(otuID => "OTU ${otuID}").reverse();
+    var yticks = otu_ids.slice(0,10).map(otuID => 'OTU ${otuID}').reverse();
 
 
 
     // 8. Create the trace for the bar chart. 
-    var trace = {
-      x: otu_labels,
-      y: yticks,
-      type: "bar",
-      orientation: "h"
-    };
-    
-    var barData = [trace];
+       
+    var barData = [
+      {
+        y: yticks, 
+        x: sample_values.slice(0, 10).reverse(),
+        text: otu_labels.slice(0, 10).reverse(),
+        type: "bar",
+        orientation: "h",
+      }
+    ];
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
@@ -103,7 +105,7 @@ function buildCharts(sample) {
 
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("plotArea", barData, barLayout);
+    Plotly.newPlot("bar", barData, barLayout);
   });
 }
 //d3.json("samples.json").then(function(data){
