@@ -65,23 +65,19 @@ function buildCharts(sample) {
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     
-    otu_ids = samplesResult.otu_ids;
+    var otu_ids = samplesResult.otu_ids;
          
-    otu_labels = samplesResult.otu_labels;
+    var otu_labels = samplesResult.otu_labels;
       
-    sample_values = samplesResult.sample_values;
+    var sample_values = samplesResult.sample_values;
      
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
     
-    //d3.json("samples.json").then(function(data){
-    //otu_ids_sorted = data.samples.map(persons => persons.otu_ids).sort((a,b) => b.length - a.length);
-   // console.log(otu_ids_sorted);
-//});
-
-    var yticks = otu_ids.slice(0,10).map(otuID => 'OTU ${otuID}').reverse();
+       //var frequency = parseFloat(metadata.wfreq);
+    var yticks = otu_ids.slice(0,10).map(otuID => `OTU ${otuID}`).reverse();
 
 
 
@@ -100,6 +96,7 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found",
+      margin : {t: 30, l: 150},
       xaxis: {title: "Sample Values"},
       yaxis: {title: "OTU-ID's"}
 
@@ -108,19 +105,6 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
   });
 }
-//d3.json("samples.json").then(function(data){
- // otu_ids_sorted = data.samples.map(persons => persons.otu_ids).sort((a,b) => a.length - b.length);
- // console.log(otu_ids_sorted);
-//});
 
-
-//var trace1 = {
- // x: data.map(row => row.greekSearchResults),
- // y: data.map(row => row.greekName),
- // text: data.map(row => row.greekName),
- // name: "Greek",
- // type: "bar",
- // orientation: "h"
-//};
 
 
