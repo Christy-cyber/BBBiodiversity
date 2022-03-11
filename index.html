@@ -7,7 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Belly Button Biodiversity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+   <!-- Add a link to our stylesheet; link to the style.css file in the css folder -->
+   <link rel="stylesheet" href="static/css/style.css">
+<!-- bacteria image downloaded from: https://sc01.alicdn.com/kf/-->
+<!-- HTB1hdI.IVXXXXaeXpXXq6xXFXXX9/223506401/HTB1hdI.IVXXXXaeXpXXq6xXFXXX9.jpg-->
+
+  </head>
 
 <body>
 
@@ -34,21 +39,29 @@
       </div>
       <div class="col-md-5">
         <div id="bar"></div>
+        <p> 
+          [Top 10 Bacteria Cultures: This bar graph shows the values for the top ten OTU-ID samples found for a single test subject. Hover over each bar to see the bacteria present. Select a different 'Test Subject ID No.' to the left to see how bacterial cultures change for each test subject.]  
+        </p>
       </div>
       <div class="col-md-5">
         <div id="gauge"></div>
+        <p>[Belly Button Washing Frequency: This gauge indicates the number of belly button scrubs per week for the selected test subject. A dash represents 'unknown' washing frequency as opposed to '0' scrubs per week.]
+        </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div id="bubble"></div>
+        <p>
+          [Bacteria Cultures per Sample: This bubble chart indicates the number of bacterial cultures per sample based on each OTU-ID for the selected test subject. Hover over each bubble to see the bacteria present.]
+        </p>
       </div>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="charts.js"></script>
+  <script src="static/js/charts.js"></script>
 
 </body>
 
